@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: shelfie
+
+# POSTGRESQL
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: mysecretpassword
+    driver-class-name: org.postgresql.Driver
+
+# JPA / HIBERNATE
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  hibernate:
+    transaction:
+      jta:
+        platform: org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform
