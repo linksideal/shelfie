@@ -1,6 +1,7 @@
 steps:
-  - name: 'gcr.io/cloud-builders/mvn'
-    args: ['clean', 'package']
+  - name: 'maven:3.9-amazoncorretto-21'
+    entrypoint: 'mvn'
+    args: ['clean', 'package', '-e', '-X']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/shelfie-425209/shelfie:latest', '.']
@@ -10,6 +11,3 @@ steps:
 
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', 'shelfie', '--image', 'gcr.io/shelfie-425209/shelfie:latest', '--platform', 'managed', '--region', 'us-central1', '--allow-unauthenticated']
-
-
-:
