@@ -27,4 +27,9 @@ public class BookController {
         return new ResponseEntity<>(bookService.getBooks(), HttpStatus.OK);
     }
 
+    @GetMapping("/")
+    public String sayHello() {
+        return "Hello, World!";
+    }
+
 }
