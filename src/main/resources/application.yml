@@ -3,6 +3,7 @@ spring:
     name: shelfie
 ---
 # POSTGRESQL
+spring:
   config:
     activate:
       on-profile: production
