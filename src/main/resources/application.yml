@@ -1,8 +1,11 @@
 spring:
   application:
     name: shelfie
-
+---
 # POSTGRESQL
+  config:
+    activate:
+      on-profile: production
   datasource:
     url: jdbc:postgresql:///postgres
     username: postgres
@@ -24,3 +27,32 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         boot:
           allow_jdbc_metadata_access: false
+
+
+---
+
+# Local profile configuration
+spring:
+  config:
+    activate:
+      on-profile: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: mysecretpassword
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      data-source-properties:
+      allow-pool-suspension: true
+
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          boot:
+            allow_jdbc_metadata_access: true
+
+---
