@@ -10,7 +10,7 @@ spring:
   datasource:
     url: jdbc:postgresql:///postgres
     username: postgres
-    password: ${DB_PASSWORD}
+    password: ${SECRET_DB_PW}
     driver-class-name: org.postgresql.Driver
     hikari:
       data-source-properties:
@@ -18,7 +18,8 @@ spring:
         cloudSqlInstance: shelfie-425209:us-west1:shelfie-postgres-instance
       allow-pool-suspension: true
 
-# JPA / HIBERNATE
+
+  # JPA / HIBERNATE
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
