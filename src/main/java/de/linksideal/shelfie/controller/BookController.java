@@ -2,9 +2,11 @@ package de.linksideal.shelfie.controller;
 
 import de.linksideal.shelfie.dto.BookDto;
 import de.linksideal.shelfie.service.BookService;
+import jakarta.annotation.security.RolesAllowed;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
