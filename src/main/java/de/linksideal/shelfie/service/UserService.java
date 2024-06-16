@@ -1,12 +1,10 @@
 package de.linksideal.shelfie.service;
 
-import de.linksideal.shelfie.domain.Book;
 import de.linksideal.shelfie.domain.User;
 import de.linksideal.shelfie.dto.UserDto;
 import de.linksideal.shelfie.mapper.UserMapper;
 import de.linksideal.shelfie.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

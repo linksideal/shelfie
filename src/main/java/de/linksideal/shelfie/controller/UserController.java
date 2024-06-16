@@ -8,13 +8,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
 @RequiredArgsConstructor
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/user/register")
+    @PostMapping("/register")
     public ResponseEntity<UserDto> register(@RequestBody UserDto userDto) {
         UserDto registeredUser = userService.registerNewUser(userDto);
         return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);

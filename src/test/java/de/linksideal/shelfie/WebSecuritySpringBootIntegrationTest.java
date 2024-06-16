@@ -23,12 +23,12 @@ public class WebSecuritySpringBootIntegrationTest {
     private MockMvc mockMvc;
     @Test
     public void whenGetProtectedViaWeb_thenForbidden() throws Exception {
-        mockMvc.perform(get("/")).andExpect(status().isUnauthorized());
+        mockMvc.perform(get("/book/all")).andExpect(status().isUnauthorized());
     }
 
     @Test
     @WithMockUser
     public void whenGetProtectedViaWebWithUser_thenOk() throws Exception {
-        mockMvc.perform(get("/")).andExpect(status().isOk());
+        mockMvc.perform(get("/book/all")).andExpect(status().isOk());
     }
 }

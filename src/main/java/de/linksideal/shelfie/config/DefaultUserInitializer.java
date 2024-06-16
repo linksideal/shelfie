@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 public class DefaultUserInitializer implements CommandLineRunner {
 
     public static final String ADMIN = "admin";
+    public static final String SECRET_ADMIN_PW = "SECRET_ADMIN_PW";
     @Autowired private UserRepository userRepository;
 
     @Autowired private PasswordEncoder passwordEncoder;
@@ -20,7 +21,7 @@ public class DefaultUserInitializer implements CommandLineRunner {
         if (userRepository.findByUsername(ADMIN) == null) {
             User user = new User();
             user.setUsername(ADMIN);
-            user.setPassword(passwordEncoder.encode(System.getenv("SECRET_ADMIN_PW")));
+            user.setPassword(passwordEncoder.encode(System.getenv(SECRET_ADMIN_PW)));
             userRepository.save(user);
         }
     }
